@@ -42,13 +42,13 @@
                         <div class="caption grey--text">Due by</div>
                         <div>{{format(new Date(project.due), 'yyyy-MM-dd') }}</div>
                     </v-flex>
-                    <v-flex xs2 sm4 md2>
+                    <v-flex xs6 sm4 md2>
                         <div class="caption grey--text">Status</div>
                         <div>
                             <v-chip small :class="`${project.status} white--text caption my-2`">{{project.status}}</v-chip>
                         </div>
                     </v-flex>
-                    <v-flex xs2 sm4 md2>
+                    <v-flex xs6 sm4 md2>
                         <div class="caption grey--text">Action</div>
                         <div>
                             <PopUpEditProject :data="project" @closeAlert="snackbar = true" />
