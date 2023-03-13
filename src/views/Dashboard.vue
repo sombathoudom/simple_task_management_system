@@ -30,25 +30,25 @@
         <div v-if="projects.length">
             <v-card class="pa-3" v-for="project in projects" :key="project.id">
                 <v-layout row wrap :class="`pa-3 project ${project.status}`">
-                    <v-flex xs12 md4>
+                    <v-flex xs12 sm12 md4>
                         <div class="caption grey--text">Project Titlle</div>
                         <div>{{project.title}}</div>
                     </v-flex>
-                    <v-flex xs6 sm4 md2>
+                    <v-flex xs6 sm6 md2>
                         <div class="caption grey--text">Person</div>
                         <div>{{project.person}}</div>
                     </v-flex>
-                    <v-flex xs6 sm4 md2>
+                    <v-flex xs6 sm6 md2>
                         <div class="caption grey--text">Due by</div>
                         <div>{{format(new Date(project.due), 'yyyy-MM-dd') }}</div>
                     </v-flex>
-                    <v-flex xs6 sm4 md2>
+                    <v-flex xs6 sm6 md2>
                         <div class="caption grey--text">Status</div>
                         <div>
                             <v-chip small :class="`${project.status} white--text caption my-2`">{{project.status}}</v-chip>
                         </div>
                     </v-flex>
-                    <v-flex xs6 sm4 md2>
+                    <v-flex xs6 sm6 md2>
                         <div class="caption grey--text">Action</div>
                         <div>
                             <PopUpEditProject :data="project" @closeAlert="snackbar = true" />
